@@ -33,9 +33,9 @@ namespace practice_for_wms.Controllers
         {
 
             if (!ModelState.IsValid)
-            {
+        {
                 return View("Index");
-            }
+        }
 
             var create = model.CreateUser;
 
