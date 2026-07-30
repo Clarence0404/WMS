@@ -1,0 +1,444 @@
+:root {
+    --sidebar-hover-bg: hsl(217 33% 17%);
+    --sidebar-background: hsl(217 91% 50%);
+    --text-muted: hsl(215 16% 47%);
+    --main-bg: hsl(210 40% 98%);
+    --border-color: hsl(214 32% 91%);
+    --muted-bg: hsl(210 40% 96%);
+
+     --sidebar-text: #F8FAFCB2;
+    --sidebar-text-active: #ffffff;
+    --sidebar-bg-hover: hsl(217 33% 17%);
+    --accent: #258cfb;
+    --radius-sm: 8px;
+}
+
+html {
+    font-size: 14px;
+    font-family: "Inter", sans-serif;
+}
+
+input:focus, select:focus {
+    outline: 0;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+.sidebar-list {
+    margin-top: 20px;
+    padding: 5px 10px;
+}
+
+.sidebar-list label {
+    margin: 10px 3px 10px 10px;
+    font-size: .75rem;
+    text-transform: uppercase;
+    color: hsl(210 40% 98%/ .4);
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.sidebar-list li {
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.sidebar-list li a {
+    display: flex;
+    padding: 8px 10px;
+    align-items: center;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #F8FAFCB2
+}
+
+.sidebar-list li.sidebar-selected a {
+    background: var(--sidebar-background);
+    color: #fff !important;
+    border-radius: 10px;
+}
+
+.sidebar-list li:not(.sidebar-selected):hover, .sidebar-list a:not(.sidebar-selected):hover {
+    background: var(--sidebar-hover-bg);
+    color: #ffffff;
+    border-radius: 10px;
+}
+
+.sidebar-list li a span {
+    margin-left: 10px;
+}
+.sidebar {
+    transition: width 0.18s ease, min-width 0.18s ease;
+}
+
+.sidebar.collapsed {
+    width: 76px;
+    min-width: 76px;
+}
+
+#appSidebar {
+    width: 288px;
+    min-width: 288px;
+    transition: width 0.3s ease, min-width 0.3s ease;
+}
+
+#appSidebar.collapsed {
+        width: 76px;
+        min-width: 76px;
+}
+
+#appSidebar.collapsed span,
+        #appSidebar.collapsed label {
+            display: none;
+}
+
+#appSidebar.collapsed .sidebar-options a {
+            justify-content: center;
+}
+
+.sidebar-options a {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.55rem 0.7rem;
+    border-radius: 8px;
+    transition: background 0.18s ease, transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.sidebar-options a:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateX(3px);
+}
+
+.sidebar-selected a {
+    background: rgba(255, 255, 255, 0.1);
+}
+aside {
+    scrollbar-width: none;
+}
+
+main {
+    background-color: var(--main-bg);
+    min-height: 90vh;
+}
+/* GRID FOR DASHBOARD */
+.grid-card {
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    font-size: 0.877rem;
+    background: #ffffff;
+    transition: box-shadow 0.3s ease;
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+}
+    .grid-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 25px rgb(0 0 0 / 15%);
+        border-color: rgba(37, 99, 235, 0.25);
+    }
+
+.grid-card .grid-header-text {
+        color: var(--text-muted);
+        font-weight: 500;
+}
+
+.btn-style, .btn-style[type="submit"] {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.card {
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+}
+
+/*DASHBOARD CATEGORY*/
+.textcolor {
+    color: #6B7280; /* Tailwind's gray-500 hex value */
+}
+
+.colortext {
+    color: #ffffff;
+}
+
+/* PRODUCT */
+option {
+    border-radius: 10px;
+}
+
+.product-table thead {
+    background: var(--muted-bg);
+    color: var(--text-muted);
+}
+
+    .product-table thead tr {
+        padding: 2px 10px;
+        background: var(--muted-bg);
+        color: var(--text-muted);
+    }
+
+th {
+    font-weight: 700;
+}
+
+th, td {
+    font-size: 0.800rem;
+    padding: 8px 13px;
+    text-align: center;
+}
+
+thead tr, tbody tr {
+    border-bottom: 1px solid var(--border-color);
+    padding: 8px 13px;
+}
+
+.table-product-name {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+table {
+    width: 100%;
+}
+
+/* CARD STATUSES */
+.badge {
+    display: inline-flex;
+    padding: 7px 20px;
+    border-radius: 999px;
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+.good, .active, .approve, .completed, .low, .done, .green {
+    background: #AFEEEE;
+    color: #007f5f;
+    text-transform: capitalize;
+}
+
+.dispatched, .assigned {
+    background: #B8E3E9;
+    color: #305CDE;
+    text-transform: capitalize;
+}
+
+.inspection, .pending, .medium, .picking, .yellow {
+    background: rgb(254 243 199);
+    color: rgb(180 83 9);
+    text-transform: capitalize;
+}
+
+.bad, .inactive, .rejected, .high, .red {
+    background: #FEE2E2;
+    color: #DC2626;
+    text-transform: capitalize;
+}
+
+.product {
+    background: hsl(217 91% 50% / .1);
+    color: #0C64F4;
+}
+
+.arrived {
+    background: #CFFAFE;
+    color: #0E7490;
+    text-transform: capitalize;
+}
+
+.in-transit {
+    background: #DBEAFE;
+    color: #1D4ED8;
+    text-transform: capitalize;
+}
+
+/* ROLES */
+.admin {
+    background: #F3E8FF;
+    color: #7E22CE;
+    text-transform: capitalize;
+}
+
+.supervisor, .blue {
+    background: #DBEAFE;
+    color: #1D4ED8;
+    text-transform: capitalize;
+}
+
+.staff {
+    background: #F3F4F6;
+    color: #374151;
+    text-transform: capitalize;
+}
+
+/*  */
+form input:focus        
+form select:focus,
+form textarea:focus {
+    outline: none;
+    border-color: rgb(59 130 246);
+    box-shadow: 0 0 0 2px rgb(59 130 246 / 0.35), 0 1px 2px rgb(0 0 0 / 0.05);
+}
+
+/*modal form for fulfillment*/
+.form-label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.modern-select {
+    width: 200%;
+    padding: 12px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    background: #fff;
+    font-size: 15px;
+    color: #374151;
+    cursor: pointer;
+    outline: none;
+    transition: .2s;
+}
+
+    .modern-select:hover {
+        border-color: #9ca3af;
+    }
+
+    .modern-select:focus {
+        border-color: #2563eb;
+        box-shadow: 0 0 0 3px rgba(37,99,235,.15);
+    }
+/*LOGIN PAGE*/
+
+.form-user, .form-pass {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+login {
+    margin: 0;
+    font-family: 'Inter',sans-serif;
+    overflow: hidden;
+}
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/warehouse-bg.jpg');
+    background-size: cover; /* scale image to cover */
+    background-position: center; /* center the image */
+    background-repeat: no-repeat; /* prevent tiling */
+    position: relative; /* for overlay */
+}
+
+    .login-page::before {
+        content: "";
+        position: absolute;
+        inset: 0; /* cover entire page */
+        background: rgba(15,23,42,.55); /* semi-transparent overlay */
+        backdrop-filter: blur(4px); /* blur effect */
+    }
+
+.login-card {
+    position: relative;
+    z-index: 2;
+    width: 420px;
+    padding: 40px;
+    border-radius: 24px;
+    background: rgba(255,255,255,.1);
+    backdrop-filter: blur(30px);
+    border: 1px solid rgba(255,255,255,.2);
+    box-shadow: 0 20px 60px rgba(0,0,0,.3);
+}
+
+.form-control {
+    width: 100%;
+    padding: 14px 18px;
+    margin-bottom: 18px;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255,255,255,.9);
+    font-size: 15px;
+    transition: .25s;
+}
+
+    .form-control:focus {
+        outline: none;
+        box-shadow: 0 0 0 4px rgba(37,99,235,.2);
+    }
+
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .25s;
+}
+
+    .login-btn:hover {
+        background: #1d4ed8;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(37,99,235,.35);
+    }
+
+.login-card {
+    animation: fadeIn .8s ease;
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.eye-icon {
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+ .eye-icon:hover {
+    color: #2563eb;
+    transform: scale(1.15);
+}
+/*delete button color*/
+.btndelete {
+    color: #DC2626;
+    text-transform: capitalize;
+}
